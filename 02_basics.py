@@ -27,3 +27,68 @@ print(message)
 
 # all in one line
 print(f'In 5 years, {name} will be {age + 5} years old.')
+
+# expressions
+length: float = 5.5
+width: float = 9.25
+area: float = length * width 
+print(f'{area = }')
+
+# types
+msg_type = type(message)
+print(f'{msg_type = }')
+print(f'{type(area) = }')
+hungry: bool = True 
+print(f'{type(hungry) = }')
+
+# conditionals
+hour: int = 20
+if hour >= 22:
+    print('It is late.  Please keep it down.')
+
+age: int = 11
+if age <= 8:
+    print('Docked mode')
+else:
+    print('Handheld mode')
+
+mark: float = 95
+if mark >= 80:
+    print('A')
+elif mark >= 70:
+    print('B')
+elif mark >= 60:
+    print('C')
+elif mark >= 50:
+    print('D')
+else:
+    print('F')
+
+# loops
+
+balance: float = 1000
+interest_rate: float = 0.035
+
+for year in range(50):
+    interest: float = balance * interest_rate
+    balance = balance + interest 
+
+print(f'{balance = }')
+
+for x in [1,2,3,4,5]:
+    print(f'{x = }')
+
+# range(start, end, step)
+# start - initial number (0)
+# end - exit number (*)
+# step - how to go to the next number (x = x + step) (1)
+# all numbers from start up to (but not including) end, increasing by step
+
+for i in range(5, 15, 2):
+    print(f'{i = }')
+
+for j in range(10, 0, -1):
+    print(f'{j = }')
+
+
+
