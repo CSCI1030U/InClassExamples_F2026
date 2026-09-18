@@ -66,6 +66,11 @@ else:
 
 # loops
 
+# for loops - used for when you know the number of iterations
+#             or when iterating over data
+# while loops - can be used in any situation, but are best for
+#               when you don't know the number of iterations
+#               e.g. hill climbing
 balance: float = 1000
 interest_rate: float = 0.035
 
@@ -89,6 +94,11 @@ for i in range(5, 15, 2):
 
 for j in range(10, 0, -1):
     print(f'{j = }')
+
+num: int = 1
+while num <= 5:
+    print(f'{num = }')
+
 
 
 
