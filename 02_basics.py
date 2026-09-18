@@ -98,7 +98,63 @@ for j in range(10, 0, -1):
 num: int = 1
 while num <= 5:
     print(f'{num = }')
+    # num = num + 1
+    num += 1
+    # num++ # not in Python
 
+seconds: int = 10
+while seconds > 0:
+    print(f'{seconds = }')
+    seconds = seconds - 1
+print(f'Launch!')
 
+# C++:
+# for (int i = 10; i > 0; i--) {
+#    cout << i << endl;
+# }
 
+# equivalent for loop:
+for seconds in range(10, 0, -1):
+    print(f'{seconds = }')
+print(f'Launch2!')
 
+y: int = 1
+while y < 1000:
+    print(f'{y = }')
+    y *= 2
+    # y = y * 2
+
+# functions
+
+def greet() -> None:
+    print('Welcome to CSCI1030U!')
+    return # optional
+
+greet()
+greet()
+
+def area_of_rectangle(length: float, width: float) -> float:
+    return length * width
+
+# int areaOfRectangle() # C++ syntax
+
+area: float = area_of_rectangle(4.5, 7.0)
+print(f'{area = }')
+
+def format_price(amount: float, currency: str = 'CAD') -> str:
+    formatted = f'{amount:.2f} ({currency})'
+    return formatted
+
+print(format_price(19.0123, 'CAD'))
+print(format_price(19.106))
+print(format_price(29, 'EUR'))
+
+def initials(full_name: str) -> str:
+    letters: str = ''
+    names: list[str] = full_name.split(' ') # also split()
+    for name in names:
+        letters = letters + name[0]
+    return letters
+    
+init: str = initials('Roberta Helen Mackenzie')
+print(f'{init = }')
