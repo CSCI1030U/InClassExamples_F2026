@@ -158,3 +158,76 @@ def initials(full_name: str) -> str:
     
 init: str = initials('Roberta Helen Mackenzie')
 print(f'{init = }')
+
+# lists
+
+playlist: list[str] = ['Wildflowers', 'Lucid Dreams', 'Levitating', 'Megalovania', 'Loonboon', 'iPod Touch', 'Kid Charlemagne']
+
+# index operator
+print(f'{playlist[0] = }')
+print(f'{playlist[1] = }')
+print(f'{playlist[2] = }')
+print(f'{playlist[3] = }')
+print(f'{playlist[len(playlist) - 1] = }') # last element
+print(f'{playlist[-1] = }') # last element
+print(f'{playlist[-2] = }') # 2nd last
+
+# slice operator (similar to range)
+print(f'{playlist[0:2] = }') # slice from 0 (inclusive) to 2 (exclusive)
+print(f'{playlist[:2] = }') # same as above
+print(f'{playlist[1:3] = }') # from 1 (inc) to 3 (exc)
+print(f'{playlist[2:] = }') # from 2 (inc) to end of list (inc)
+print(f'{playlist[:] = }') # all items (copy)
+
+print(f'{playlist[1:4:2] = }') # step size 2
+print(f'{playlist[4:1:-1] = }') # step size -1, from index 4 (inc) to 1 (exc)
+print(f'{playlist[::] = }') # all items (copy)
+print(f'{playlist[::-1] = }') # all items, but in reverse
+
+print(f'{playlist[0:1] = }')
+
+temperatures: list[float] = [128.0, 10.5, 11.2, 34.0, 41.0, 22.5, -17.4]
+hottest: float = temperatures[0]
+coldest: float = temperatures[0]
+for temp in temperatures:
+    if temp > hottest:
+        hottest = temp
+
+    if temp < coldest:
+        coldest = temp 
+
+print(f'{hottest = }')
+print(f'{coldest = }')
+
+# strings
+
+name: str = 'Maya Angelou'
+print(f'{name[::-1] = }')
+print(f'{name[0:1] = }')
+print(f'{len(name) = }')
+print(f'{name.lower() = }')
+
+vowel_count: int = 0
+for char in name.lower():
+    if char in 'aeiou':
+        vowel_count += 1
+print(f'{vowel_count = }')
+
+print(f'{"a" + "b" + "c" = }')
+print(f'{"a" + "a" + "a" = }')
+print(f'{"a" * 3 = }')
+
+# dictionaries
+
+product = {
+    'id': '12345-A',
+    'name': 'Really Fast GPU',
+    'price': 39999999.99,
+    'quantity_in_stock': 101,
+    'reviews': ['I love this GPU', 'This stinks']
+}
+
+print(f'{product["price"] = }')
+
+for prod in product:
+    print(prod, product[prod])
