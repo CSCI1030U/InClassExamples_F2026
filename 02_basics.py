@@ -231,3 +231,17 @@ print(f'{product["price"] = }')
 
 for prod in product:
     print(prod, product[prod])
+
+for key, value in product.items():
+    print(f'{key} = {value}')
+
+
+# not a special function, but created to behave like main() in Java, C++
+def main():
+    print('This is the main function.')
+
+# main entry point
+if __name__ == "__main__":
+    # this ensures that main() is only executed when this file is the
+    # executing program (not if this file is an imported module)
+    main()
