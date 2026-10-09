@@ -1,3 +1,17 @@
+# from the slides:
+class Student:
+    def __init__(self, name: str, grades: list[float]) -> None:
+        self.name = name
+        self.grades = grades
+ 
+    def average(self) -> float:
+        return sum(self.grades) / len(self.grades)
+ 
+s = Student("Maya", [88, 92, 75])
+print(f'{s.name = }')         # Maya
+print(f'{s.average() = }')    # 85.0
+
+
 class Cat:
     def __init__(self, name: str, breed: str) -> None:
         self.__name: str = name 
