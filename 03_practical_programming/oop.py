@@ -7,10 +7,10 @@ class Student:
     def average(self) -> float:
         return sum(self.grades) / len(self.grades)
  
-s = Student("Maya", [88, 92, 75])
-print(f'{s.name = }')         # Maya
-print(f'{s.average() = }')    # 85.0
-
+s1 = Student("Maya", [88, 92, 75])
+s2 = Student("Carla", [88, 92, 75])
+print(f'{s1.name = }')         # Maya
+print(f'{s1.average() = }')    # 85.0
 
 class Cat:
     def __init__(self, name: str, breed: str) -> None:
