@@ -10,9 +10,14 @@ def has_duplicate(items):
 print(f'{has_duplicate([1,2,3,4,5,6,3]) = }')
 print(f'{has_duplicate([1,2,3,4,5,6,7]) = }')
 
+# O(n)
 def has_duplicate_fast(items):
     already_checked = set()
     for item in items:
+        # how fast does 'in' check for list or set membership?
+        # list - O(n)
+        # set  - O(1) (https://www.geeksforgeeks.org/python/time-complexity-of-in-operator-in-python/)
+        # choosing a data structure has a big impact - we'll discuss later
         if item in already_checked:
             return True 
         already_checked.add(item)
