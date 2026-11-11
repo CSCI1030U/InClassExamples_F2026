@@ -41,3 +41,35 @@ def merge_sort(items):
     return merge(left, right)
 
 print(f'{merge_sort([2,6,5,1,3,4]) = }')
+
+# for comparison, here is quicksort:
+
+def split(items, pivot):
+    smaller = []
+    larger = []
+
+    for index in range(len(items)):
+        if items[index] < pivot:
+            smaller.append(items[index])
+        else:
+            larger.append(items[index])
+
+    return smaller, larger
+
+def quicksort(items):
+    # base case
+    if len(items) <= 1:
+        return items
+
+    # divide
+    pivot = items[0]
+    smaller, larger = split(items[1:], pivot)
+
+    # conquer
+    smaller = quicksort(smaller)
+    larger = quicksort(larger)
+
+    # combine
+    return smaller + [pivot] + larger
+
+print(f'{quicksort([2,6,5,1,3,4]) = }')
