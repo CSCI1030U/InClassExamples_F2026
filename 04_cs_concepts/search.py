@@ -1,3 +1,4 @@
+# O(n)
 def linear_search(items, target):
     comparison_count = 0
     for i in range(len(items)):
@@ -11,6 +12,7 @@ def linear_search(items, target):
 print(f'{linear_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 4) = }')
 print(f'{linear_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 31) = }')
 
+# O(log n)
 def binary_search(items, target):
     low = 0
     high = len(items) - 1
