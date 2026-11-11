@@ -42,7 +42,7 @@ def merge_sort(items):
 
 print(f'{merge_sort([2,6,5,1,3,4]) = }')
 
-# for comparison, here is quicksort:
+# for comparison, here is quicksort (for reference only - not covered in class)
 
 def split(items, pivot):
     smaller = []
