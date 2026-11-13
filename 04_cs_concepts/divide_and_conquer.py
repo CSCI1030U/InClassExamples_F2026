@@ -55,6 +55,8 @@ def split(items, pivot):
             larger.append(items[index])
 
     return smaller, larger
+    # one liner version:
+    # return [item for item in items if item < pivot], [item for item in items if item >= pivot]
 
 def quicksort(items):
     # base case
