@@ -9,3 +9,15 @@ def make_change(amount, bills):
         return change
 
 print(f'{make_change(105, [1,5,20,50]) = }')
+
+def most_items(weights, budget):
+    """Greedy: take the lightest items while they still fit."""
+    taken = []
+    for w in sorted(weights): # lightest first
+        if w > budget:
+            break # nothing heavier fits either - stop
+        taken.append(w)
+        budget -= w
+    return taken
+
+print(f'{most_items([4, 2, 7, 1, 3], 8) = }')

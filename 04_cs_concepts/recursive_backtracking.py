@@ -55,3 +55,24 @@ def print_solution(index, solution):
 solutions = solve_n_queens(8)
 for index in range(len(solutions)):
     print_solution(index, solutions[index])
+
+def subset_sum(values, target):
+    """Return one subset of values adding to target, or None if impossible."""
+    chosen = []
+
+    def try_from(i, remaining):
+        if remaining == 0:
+            return True # chosen already adds up
+
+        if remaining < 0 or i == len(values):
+            return False # overshot, or ran out of values
+        
+        chosen.append(values[i])
+        # choose it
+        if try_from(i + 1, remaining - values[i]):
+            return True
+        chosen.pop() # UNDO - that choice dead-ended
+        
+        return try_from(i + 1, remaining) # ... so try skipping it instead
+    
+    return chosen if try_from(0, target) else None
