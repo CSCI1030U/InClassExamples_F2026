@@ -36,3 +36,23 @@ def fib_linear(n):
     return solutions[n]
 
 print(f'{fib_linear(5000) = }')
+
+# Alternative: pick values so no two picks are neighbours; maximize the total
+
+def max_non_adjacent_slow(values, i=None):
+    """The plain recursion: correct, but O(2^n) - it recomputes everything."""
+    if i is None:
+        i = len(values) - 1
+    if i < 0:
+        return 0
+    return max(values[i] + max_non_adjacent_slow(values, i - 2), max_non_adjacent_slow(values, i - 1))
+
+def max_non_adjacent(values):
+    """Bottom-up DP: O(n) time, O(1) space."""
+    skip = take = 0
+    # best total excluding (skip) or including (take) the current value
+    for v in values:
+        skip, take = max(skip, take), skip + v
+        return max(skip, take)
+
+print(f'{max_non_adjacent([3, 2, 7, 10]) = }')
