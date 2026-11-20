@@ -68,3 +68,25 @@ stack2.push(2)
 stack2.push(3)
 while not stack2.is_empty():
     print(f'{stack2.pop() = }')
+
+# bracket balancing
+def balanced(string):
+    pairs = {
+        ')': '(',
+        ']': '[',
+        '}': '{'        
+    }
+    stack = LinkedStack()
+    for char in string:
+        if char in '([{':
+            stack.push(char)
+        elif char in ')]}':
+            if stack.is_empty() or stack.pop() != pairs[char]:
+                return False # unmatched bracket, or wrong closing bracket
+    return stack.is_empty()
+
+print(f'{balanced("((1 + 3) * 4) + 1") = }') # True
+print(f'{balanced("[(1 + 3) * 4] + 1") = }') # True
+print(f'{balanced("([1 + 3) * 4] + 1") = }') # False
+print(f'{balanced("[(1 + 3) * 4") = }')
+print(f'{balanced("[1 + 3) * 4]") = }')
